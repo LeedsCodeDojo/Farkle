@@ -1,0 +1,1 @@
+data class FarkleScore(val diceScore: Int, val scoreForOne: Int, val scoreForThree: Int)
