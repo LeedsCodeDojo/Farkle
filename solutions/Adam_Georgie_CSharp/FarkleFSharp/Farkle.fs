@@ -1,6 +1,5 @@
-module Tests
+module Farkle
 
-open System
 open Xunit
 
 let score rolls =
