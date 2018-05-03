@@ -1,0 +1,161 @@
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+
+//namespace Farkle
+//{
+//    public class Scorer
+//    {
+
+        //private bool Same(int[] a, int[] b)
+        //{
+        //    if (a.Length < b.Length) return false;
+        //    for (int i = 0; i < a.Length; i++)
+        //    {
+        //        if (a[i] != b[i]) return false;
+        //    }
+        //    return true;
+        //}
+
+        //public int ScoreForThreeLots(int numberOfSpots)
+        //{
+        //    switch (numberOfSpots)
+        //    {
+        //        case 1:
+        //            return 1000;
+        //        case 2:
+        //            return 200;
+        //        case 3:
+        //            return 300;
+        //        case 4:
+        //            return 400;
+        //        case 5:
+        //            return 500;
+        //        case 6:
+        //            return 600;
+        //        default:
+        //            return 0;
+        //    }
+        //}
+
+        //public int Score(int[] diceRolls)
+        //{
+        //    if (diceRolls.Length == 0) return 0;
+
+        //    bool Match(int[] target) => Same(diceRolls.Take(target.Length).ToArray(), target);
+
+        //    for (int numberOfSpots = 1; numberOfSpots <= 6; numberOfSpots++)
+        //    {
+        //        if (Match(new int[] { numberOfSpots, numberOfSpots, numberOfSpots, numberOfSpots }))
+        //            return 2 * ScoreForThreeLots(numberOfSpots) + Score(diceRolls.Skip(4).ToArray());
+        //    }
+
+        //    for (int numberOfSpots = 1; numberOfSpots <= 6; numberOfSpots++)
+        //    {
+        //        if (Match(new int[] { numberOfSpots, numberOfSpots, numberOfSpots }))
+        //            return ScoreForThreeLots(numberOfSpots) + Score(diceRolls.Skip(3).ToArray());
+        //    }
+
+        //    if (Match(new int[] { 1 }))
+        //        return 100 + Score(diceRolls.Skip(1).ToArray());
+
+        //    if (Match(new int[] { 5 }))
+        //        return 50 + Score(diceRolls.Skip(1).ToArray());
+
+        //    return Score(diceRolls.Skip(1).ToArray());
+        //}
+
+//        class Rule_RollOf
+//        {
+//            public int Quantity { get; set; }
+//            public int NumberOfSpots { get; set; }
+//            public int Score { get; set; }
+
+//            public Rule_RollOf(int quantity, LotsOf numberOfSpots, int Scores)
+//            {
+//                this.Quantity = quantity;
+//                this.NumberOfSpots = (int)numberOfSpots;
+//                this.Score = Scores;
+//            }
+
+//            public (int[] remainingDice, int score) Apply(int[] numberOf, int currentScore)
+//            {
+//                var totalScore = currentScore;
+//                while (numberOf[this.NumberOfSpots] >= this.Quantity)
+//                {
+//                    numberOf[this.NumberOfSpots] -= this.Quantity;
+//                    totalScore += this.Score;
+//                }
+//                return (numberOf, totalScore);
+//            }
+//        }
+
+//        public enum LotsOf
+//        {
+//            Ones = 1,
+//            Twos = 2,
+//            Threes = 3,
+//            Fours = 4,
+//            Fives = 5,
+//            Sixes = 6
+//        }
+
+//        public int Evaluate(int[] diceRolls)
+//        {
+//            var rules = new List<Rule_RollOf>()
+//            {
+//                new Rule_RollOf(3,LotsOf.Ones,Scores:1000),
+//                new Rule_RollOf(3,LotsOf.Twos,Scores:200),
+//                new Rule_RollOf(3,LotsOf.Threes,Scores:300),
+//                new Rule_RollOf(3,LotsOf.Fours,Scores:400),
+//                new Rule_RollOf(3,LotsOf.Fives,Scores:500),
+//                new Rule_RollOf(3,LotsOf.Sixes,Scores:600),
+//                new Rule_RollOf(1,LotsOf.Ones,Scores:100),
+//                new Rule_RollOf(1,LotsOf.Fives,Scores:50),
+//            };
+
+//            var numberOf = CountDice(diceRolls);
+//            var totalScore = rules.Aggregate((RemainingDice: numberOf, RunningTotal: 0),
+//                                              (state, rule) => rule.Apply(state.RemainingDice, state.RunningTotal)).RunningTotal;
+//            return totalScore;
+//        }
+
+//        private int[] CountDice(int[] diceRolls)
+//            => Enumerable.Range(0, 7).Select(numberOfSpots => NumberOfDice(diceRolls, numberOfSpots)).ToArray();
+
+//        private int NumberOfDice(int[] diceRolls, int numberOfSpots) => diceRolls.Count(roll => roll == numberOfSpots);
+
+
+
+
+//        //public int Evaluate(int[] diceRolls)
+//        //{
+//        //    var totalScore = 0;
+
+//        //    if (NumberOfDice(diceRolls, 5) == 1)
+//        //        totalScore = totalScore + 50;
+
+//        //    if (NumberOfDice(diceRolls, 1) == 3)
+//        //        totalScore = totalScore + 1000;
+
+//        //    if (NumberOfDice(diceRolls, 1) == 4)
+//        //        totalScore = totalScore + 1100;
+
+//        //    for (int i = 2; i <= 6; i++)
+//        //    {
+//        //        if (NumberOfDice(diceRolls, i) == 3)
+//        //            totalScore += (100 * i);
+//        //    }
+
+//        //    if (NumberOfDice(diceRolls, 1) == 1)
+//        //        totalScore += 100;
+
+//        //    return totalScore;
+//        //}
+
+//        //private int NumberOfDice(int[] diceRolls, int diceNumber)
+//        //{
+//        //    return diceRolls.Count(roll => roll == diceNumber);
+//        //}
+//    }
+//}
