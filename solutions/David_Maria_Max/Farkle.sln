@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farkle", "Farkle\Farkle.csproj", "{D7E28B19-2B01-4371-ADFA-C7F9C7A2DDA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farkle.Tests", "Farkle.Tests\Farkle.Tests.csproj", "{BE7566CD-32EC-45A1-97DB-3D44A5001E2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7E28B19-2B01-4371-ADFA-C7F9C7A2DDA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7E28B19-2B01-4371-ADFA-C7F9C7A2DDA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7E28B19-2B01-4371-ADFA-C7F9C7A2DDA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7E28B19-2B01-4371-ADFA-C7F9C7A2DDA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE7566CD-32EC-45A1-97DB-3D44A5001E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7566CD-32EC-45A1-97DB-3D44A5001E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7566CD-32EC-45A1-97DB-3D44A5001E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7566CD-32EC-45A1-97DB-3D44A5001E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99EB728D-96F7-4924-8C85-9CE4C92205F0}
+	EndGlobalSection
+EndGlobal
